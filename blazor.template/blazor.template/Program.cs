@@ -20,6 +20,8 @@ builder.Services.AddRazorComponents()
 
 string ClientName = "BlazorHero.API";
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddLocalization(options =>
                 {
                     options.ResourcesPath = "Resources";

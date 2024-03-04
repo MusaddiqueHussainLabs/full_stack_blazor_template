@@ -8,19 +8,33 @@
 @using Microsoft.JSInterop
 @using blazor.template
 @using blazor.template.client
+@using blazor.template.client.infrastructure.Authentication
 @using blazor.template.client.infrastructure.Settings
 @using blazor.template.Components
 @using blazor.template.Components.Layout
 @using MudBlazor
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
+@using Blazored.LocalStorage;
 
 @*Client Services*@
 @using blazor.template.client.infrastructure.Managers.Preferences
 @using blazor.template.client.infrastructure.Managers.Interceptors
+@using blazor.template.client.infrastructure.Managers.Identity.Authentication
+@using blazor.template.client.infrastructure.Managers.Identity.Users
+@using blazor.template.client.infrastructure.Managers.Identity.Account
 
 
+
+@inject IAuthenticationManager _authenticationManager
+@inject IAccountManager _accountManager
 @inject ISnackbar _snackBar
 @inject NavigationManager _navigationManager
 @inject ClientPreferenceManager _clientPreferenceManager
+@inject HttpClient _httpClient
+@inject IUserManager _userManager
+@inject IDialogService _dialogService
+@inject BlazorStateProvider _stateProvider
 @inject IHttpInterceptorManager _interceptor
+@inject ILocalStorageService _localStorage;
+@inject IJSRuntime _jsRuntime;
