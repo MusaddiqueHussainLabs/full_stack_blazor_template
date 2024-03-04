@@ -8,4 +8,19 @@
 @using Microsoft.JSInterop
 @using blazor.template
 @using blazor.template.client
+@using blazor.template.client.infrastructure.Settings
 @using blazor.template.Components
+@using blazor.template.Components.Layout
+@using MudBlazor
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+
+@*Client Services*@
+@using blazor.template.client.infrastructure.Managers.Preferences
+@using blazor.template.client.infrastructure.Managers.Interceptors
+
+
+@inject ISnackbar _snackBar
+@inject NavigationManager _navigationManager
+@inject ClientPreferenceManager _clientPreferenceManager
+@inject IHttpInterceptorManager _interceptor
